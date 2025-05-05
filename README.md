@@ -37,13 +37,26 @@ TELEGRAM_TOKEN=توکن_ربات_شما
 npm install
 ```
 
-### 5. اجرای پروژه
+### 5. تنظیم وب‌هوک
+برای اتصال ربات به سرور، وب‌هوک را تنظیم کنید:
+1. مطمئن شوید که سرور شما در حال اجرا است و یک URL عمومی و امن (HTTPS) دارید.
+2. دستور زیر را اجرا کنید (توکن و URL را جایگزین کنید):
+   ```bash
+   curl -X POST "https://api.telegram.org/bot<YOUR_TELEGRAM_TOKEN>/setWebhook" \
+        -d "url=https://your-domain.com/webhook"
+   ```
+3. وضعیت وب‌هوک را بررسی کنید:
+   ```bash
+   curl "https://api.telegram.org/bot<YOUR_TELEGRAM_TOKEN>/getWebhookInfo"
+   ```
+
+### 6. اجرای پروژه
 برای اجرای پروژه، دستور زیر را اجرا کنید:
 ```bash
 npm start
 ```
 
-### 6. تست ربات
+### 7. تست ربات
 به تلگرام بروید و ربات خود را جستجو کنید. `/start` را ارسال کرده و قابلیت‌های ربات را تست کنید.
 
 ## مشارکت
